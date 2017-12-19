@@ -28,7 +28,6 @@ public class SolumResource {
 	@Path("/api")
 	@Produces("application/xml")
 	public Solum_Team_Meeting buildAPI() {
-		
 		Solum_Team_Meeting solum = new Solum_Team_Meeting();
 		
 		for(int i = 2013; i <= 2017; i++) {
@@ -46,7 +45,7 @@ public class SolumResource {
 	@Path("/count")
 	@Produces("text/html")
 	public String count() throws Exception {
-		String path = "http://localhost:8080/assignment6/assignment6/solum/api";
+		String path = "http://localhost:8080/assignment6/solum/api";
 		
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		String expression = "/solumTeamMeeting/years/year/meetings_count";
@@ -61,14 +60,6 @@ public class SolumResource {
 			System.out.println("Node value:" + n.getTextContent());
 		}
 		return result;
-	}
-	
-	@GET
-	@Path("/helloworld-austin")
-	@Produces("text/html")
-	public String helloAustin() {
-		System.out.println("Inside helloAustin");
-		return "Hello Austin ";
 	}
 
 }

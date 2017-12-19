@@ -18,6 +18,6 @@
  
     <servlet-mapping>
         <servlet-name>Resteasy</servlet-name>
-        <url-pattern>/assignment6</url-pattern>
+        <url-pattern>/solum</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -17,7 +17,7 @@ function doAjaxCall(url, callbackfunc) {
 }
 
 function showTable(url) {
-	if(url == "/assignment6/assignment6/solum/count/") 
+	if(url == "/assignment6/solum/count/") 
 		doAjaxCall(url, tableFunc)
 }
 
@@ -31,11 +31,6 @@ function tableFunc(xmlhttp) {
    	document.getElementById("15").innerHTML=resultArray[2];
    	document.getElementById("16").innerHTML=resultArray[3];
    	document.getElementById("17").innerHTML=resultArray[4];
-}
-
-function myfunction2(xmlhttp)
-{
-    document.getElementById("myDiv1").innerHTML=xmlhttp.responseText;
 }
 </script>
 
@@ -52,7 +47,7 @@ table, th, td {
 
 <h2>Welcome to OpenStack Solum Meeting Analytics</h2>
 <h2>Click 
- <a href="#" onclick="showTable('/assignment6/assignment6/solum/count/');return false;">here</a> 
+ <a href="#" onclick="showTable('/assignment6/solum/count/');return false;">here</a> 
  to see number of meetings for Solum OpenStack project</h2>
 
 <div id="table1" style="display: none">
@@ -84,17 +79,6 @@ table, th, td {
 		</table>
 
 </div>
-
-<!-- 
-<div id="myDiv"><h2></h2></div>
-<button type="button" onclick="myFunction('/js-example/app/path/helloworld-resource/')">Change Content</button>
-
-<br>
-<br>
-
-<div id="myDiv1"><h2>Let AJAX change this text too</h2></div>
-<button type="button" onclick="myFunction('/js-example/app/path/helloworld-austin/')">Change Content</button>
--->
 
 </body>
 </html>
