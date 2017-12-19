@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment 6: solum_team_meeting</title>
+<script>
+function doAjaxCall(url, callbackfunc) {
+	  var xhttp;
+	  xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	callbackfunc(this);
+	    }
+	  };
+	  xhttp.open("GET", url, true);
+	  xhttp.send();
+}
+
+function showTable(url) {
+	if(url == "/assignment6/assignment6/solum/count/") 
+		doAjaxCall(url, tableFunc)
+}
+
+function tableFunc(xmlhttp) {
+	document.getElementById("table1").style.display="";
+   	//document.getElementById("13").innerHTML=xmlhttp.responseText;
+   	var result = xmlhttp.responseText;
+   	var resultArray = result.split(" ");
+   	document.getElementById("13").innerHTML=resultArray[0];
+   	document.getElementById("14").innerHTML=resultArray[1];
+   	document.getElementById("15").innerHTML=resultArray[2];
+   	document.getElementById("16").innerHTML=resultArray[3];
+   	document.getElementById("17").innerHTML=resultArray[4];
+}
+
+function myfunction2(xmlhttp)
+{
+    document.getElementById("myDiv1").innerHTML=xmlhttp.responseText;
+}
+</script>
+
+
+</head>
+<style>
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+</style>
+<body>
+
+<h2>Welcome to OpenStack Solum Meeting Analytics</h2>
+<h2>Click 
+ <a href="#" onclick="showTable('/assignment6/assignment6/solum/count/');return false;">here</a> 
+ to see number of meetings for Solum OpenStack project</h2>
+
+<div id="table1" style="display: none">
+		<table>
+			<tr>
+				<th>Year</th>
+				<th>Number of Meetings</th>
+			</tr>
+			<tr>
+				<td>2013</td>
+				<td id="13"></td>
+			</tr>
+			<tr>
+				<td>2014</td>
+				<td id="14"></td>
+			</tr>
+			<tr>
+				<td>2015</td>
+				<td id="15"></td>
+			</tr>
+			<tr>
+				<td>2016</td>
+				<td id="16"></td>
+			</tr>
+			<tr>
+				<td>2017</td>
+				<td id="17"></td>
+			</tr>
+		</table>
+
+</div>
+
+<!-- 
+<div id="myDiv"><h2></h2></div>
+<button type="button" onclick="myFunction('/js-example/app/path/helloworld-resource/')">Change Content</button>
+
+<br>
+<br>
+
+<div id="myDiv1"><h2>Let AJAX change this text too</h2></div>
+<button type="button" onclick="myFunction('/js-example/app/path/helloworld-austin/')">Change Content</button>
+-->
+
+</body>
+</html>
